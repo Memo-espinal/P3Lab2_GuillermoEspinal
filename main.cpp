@@ -81,6 +81,52 @@ int juego_arreglos(int tama ){
 	return 1;
 }
 
+void Pascal(int tamano){
+	int array1[tamano];
+	int array2[tamano];
+	int numero ;
+	
+	
+	for(int i =0;i<tamano;i++){
+		//array1[0]=1;
+	
+		
+		numero =1;
+		for(int j=0 ;j<=i ;j++){
+			//cout<< array1[0]<<" ";
+			//array1[0]*=(i-j)/j;  
+			cout<< numero <<" ";
+			//numero*=(numero-j)/j;
+			int resta =numero-(j+1);
+			//cout<< "aqui llegue";
+			int multiplicacion =resta/(j+1);
+			//cout<< "aqui llegue";
+			numero *=multiplicacion;//numero;
+			//cout<< "aqui llegue";
+     
+			
+		/*	if (j==0&&i==0){
+				//int array1[tamano];
+				for(int x=0;x<tamano;x++){
+					if(x=0){
+						array1[x]=1;
+					}
+				}
+				for(int x=0;x<tamano;x++){
+					cout<< array1[x]<<" ";
+				}
+			}
+			
+			if (i==1){
+				for 
+			}
+			
+		}*/
+		}
+	cout<< endl;
+	}
+}
+
 int main (){
 	srand(time (NULL));
 	
@@ -105,7 +151,10 @@ int main (){
 			  
 			  
 	 		case 2:  
-	 		cout<< ""
+	 			int tamano_triangulo;
+	 			cout<< "Ingrese el tamano del triangulo: ";
+	 			cin >> tamano_triangulo;
+	 			Pascal(tamano_triangulo);
 	 			break;
 	 			
 	 			
