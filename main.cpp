@@ -1,7 +1,7 @@
 #include <windows.h>
 #include <iostream>
-//#include <stdlib.h>
-//#include <time.h>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -23,9 +23,66 @@ int Funcion_Euler(int numero){
 	return contador_euler;
 	
 }
+int juego_arreglos(int tama ){
+	int array[tama];
+	for (int i =0;i<tama;i++){
+		array[i]=-50+rand()%(-50+150);
+	}
+	int t_jugador1,t_jugador2;
+		t_jugador1=0;
+		t_jugador2=0;
+	int opcion;
+	for (int i=0;i<tama/2;i++){
+		
+		cout<< "Jugador 1 eliga una posicion : " ;
+		cin >>opcion;
+		while (opcion > tama ||opcion <0||array[opcion]==-100){
+			cout<< "Esa posicion ya fue usada o no esta entre el tamano del arreglo vuelva a ingresarla: ";
+			cin>>opcion;
+		}
+		t_jugador1+=array[opcion];
+		cout<< "Jugador 1 obtuvo: "<<array[opcion]<<endl;
+		cout<<endl;
+		array[opcion]=-100;
+		
+		//ahora jugador 2
+			cout<< "Jugador 2 eliga una posicion : " ;
+		cin >>opcion;
+		while (opcion > tama ||opcion <0||array[opcion]==-100){
+			cout<< "Esa posicion ya fue usada o no esta entre el tamano del arreglo vuelva a ingresarla: ";
+			cin>>opcion;
+		}
+		t_jugador2+=array[opcion];
+		cout<< "Jugador 2 obtuvo: "<<array[opcion]<<endl;
+		cout<<endl;
+		array[opcion]=-100;
+		
+		if (i ==tama-1){
+			cout<<"FINAL - [PTS J1: "<<t_jugador1<<"<-->"<<"PTS J2: "<<t_jugador2<<"]"<< endl;
+			
+		}else {
+			cout<<"Ronda "<<i<<" - [PTS J1: "<<t_jugador1<<"<-->"<<"PTS J2: "<<t_jugador2<<"]"<< endl;
+		}
+		
+	}
+	if (t_jugador1>t_jugador2){
+		return 1;
+	}else if (t_jugador1<t_jugador2 ) {
+		return 2;
+	}else {
+		return 3;
+	}
+/*	for (int i =0;i<tama;i++){
+		cout<< array[i]<<" ";
+	}
+	cout<< endl;
+*/	
+	
+	return 1;
+}
 
 int main (){
-	//srand(time (NULL));
+	srand(time (NULL));
 	
 	int eleccion=1;
 	 
@@ -46,9 +103,29 @@ int main (){
 			 
 			 break;
 			  
+			  
 	 		case 2:  
+	 		cout<< ""
 	 			break;
-	 		case 3: 
+	 			
+	 			
+	 		case 3:
+			 int tama; 
+			 cout<<"Ingrese el tamano del arreglo : "<<endl;
+			 cin >> tama;
+			 while (tama%2!=0){
+			 	cout<< "El tamano debe de ser par! vuelva lo a ingresar: ";
+			 	cin >>tama;
+			 }
+			 int x= juego_arreglos(tama);
+			 if(x==1){
+			 	cout<< "J1 GANA!"<<endl;
+			 }else if (x==2){
+			 	cout<<"J2 GANA!"<<endl;
+			 	
+			 }else {
+			 	cout<<"EMPATE!"<<endl;
+			 }
 	 			break;
 	 	
 		 
