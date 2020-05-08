@@ -84,24 +84,22 @@ int juego_arreglos(int tama ){
 void Pascal(int tamano){
 	int array1[tamano];
 	int array2[tamano];
-	int numero ;
+	//int numero ;
 	
 	
 	for(int i =0;i<tamano;i++){
 		//array1[0]=1;
 	
 		
-		numero =1;
+		int numero =1;
 		for(int j=0 ;j<=i ;j++){
-			//cout<< array1[0]<<" ";
-			//array1[0]*=(i-j)/j;  
-			cout<< numero <<" ";
-			//numero*=(numero-j)/j;
-			int resta =numero-(j+1);
+			cout<< numero <<", ";
+			numero= numero*((i+1)-(j+1))/(j+1);
+			//int resta =numero-(j+1);
 			//cout<< "aqui llegue";
-			int multiplicacion =resta/(j+1);
+			//int multiplicacion =resta/(j+1);
 			//cout<< "aqui llegue";
-			numero *=multiplicacion;//numero;
+			//numero *=multiplicacion;//numero;
 			//cout<< "aqui llegue";
      
 			
